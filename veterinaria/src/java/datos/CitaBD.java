@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import model.Cita;
 
 /**
@@ -86,6 +87,43 @@ public class CitaBD {
         
         ConectarBD.cerrar();
         return false;
+    }
+    
+    public ArrayList<Cita> obtenerCitas(int idUsuario) {
+        ArrayList<Cita> citas = new ArrayList<Cita>();
+        
+        try {
+            
+            conexion = ConectarBD.abrir();
+            stm = conexion.createStatement();
+            
+            String query = MessageFormat.format(
+                    "SELECT * FROM Citas WHERE idCliente = {0}", 
+                    idUsuario
+            );
+            
+            System.out.println(query);
+            
+            result = stm.executeQuery(query);
+            
+            if (result.next()) {
+                Cita cita = new Cita(
+                        result.getString(2), 
+                        result.getString(3), 
+                        query, 
+                        query, 
+                        query, 
+                        idUsuario
+                );
+            }
+            
+            return citas;
+            
+        } catch (Exception e) {
+            System.out.println("Error al obtener las citas: " + e.getMessage());
+        }
+        
+        return null;
     }
     
 }
