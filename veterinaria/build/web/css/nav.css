@@ -1,0 +1,35 @@
+header {
+  /*background: #fff3ff;*/
+  max-width: 100%;
+  position: sticky;
+  z-index: 100;
+  padding: 10px;
+}
+
+nav {
+  max-width: 100%;
+  background: #FDF4EE;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden; 
+}
+
+nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+nav ul li a {
+  display: block;
+  color: #111;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+}
+nav ul li:hover {
+  background: #ffc193;
+  border-radius: 20px;
+}
