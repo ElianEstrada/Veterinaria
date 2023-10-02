@@ -28,4 +28,26 @@ public class ObtenerCita {
         return citas;
     }
     
+    public ArrayList<Cita> obtenerCitasAdmin() {
+        
+        ArrayList<Cita> citas = new ArrayList<>();
+        
+        try {
+            
+            CitaBD citaBD = new CitaBD();
+            citas = citaBD.obtenerCitasAdmin();
+            
+            if (citas == null ) {
+                System.out.println("Error al obtener citas");
+            }
+            
+            return citas;
+            
+        } catch (Exception e ) {
+            System.out.println("Error al obtener citas: " + e.getMessage());
+        }
+        
+        return citas;
+    }
+    
 }

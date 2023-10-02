@@ -1,0 +1,13 @@
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre1', 12.5, 10, null, 1);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre2', 13.5, 15, null, 2);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre3', 14.5, 20, null, 3);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre4', 15.5, 25, null, 1);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre5', 16.5, 30, null, 2);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre6', 17.5, 35, null, 3);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre7', 18.5, 40, null, 1);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre8', 19.5, 45, null, 2);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre9', 20.5, 50, null, 3);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre10', 21.5, 55, null, 1);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre11', 22.5, 60, null, 2);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre12', 23.5, 65, null, 3);
+INSERT INTO Producto (nombre, precio, existencia, descripcion, idTipoProducto) VALUES ('nombre13', 24.5, 70, null, 1);

@@ -5,9 +5,25 @@
     Usuario usuario = (Usuario) session.getAttribute("usuario");
 %>
 
+<%
+    if (usuario != null) {
+%>
+
 <h1>
-    Hola :3 <%=usuario%>
+    Bienvenido <%=usuario.getNombre()%> a la Veterinaria
 </h1>
+
+<%
+    } else {
+%>
+
+<h1>
+    Bienvenido a la Veterinaria
+</h1>
+
+<%
+    }
+%>
 
 
 <jsp:include page="/Componentes/Footer.jsp" />

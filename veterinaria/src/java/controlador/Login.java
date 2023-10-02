@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import model.TipoUsuario;
 import model.Usuario;
 /*import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -96,7 +97,12 @@ public class Login extends HttpServlet {
                 
                 //request.setAttribute("usuario", usuario);
                 //request.getRequestDispatcher("/Producto.jsp").forward(request, response);
-                response.sendRedirect("./InicioCliente.jsp");
+                
+                if (usuario.getTipo().equals(TipoUsuario.CLIENTE)) {
+                    response.sendRedirect("./InicioCliente.jsp");
+                } else {
+                    response.sendRedirect("./InicioAdmin.jsp");
+                }
             } else {
                 response.setContentType("text/html;charset=UTF-8");
                 try (PrintWriter out = response.getWriter()) {

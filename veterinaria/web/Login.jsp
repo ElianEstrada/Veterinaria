@@ -1,18 +1,14 @@
-<%-- 
-    Document   : Login
-    Created on : 1/10/2023, 01:12:24
-    Author     : elian_estrada
---%>
-
 <jsp:include page="/Componentes/Header.jsp" />
 <jsp:include page="/Componentes/Nav.jsp" />
 <%@page import="controlador.Login" %>
 <h1> Iniciar Sesión </h1>
-<form method="POST" action="Login">
-    <label>Correo</label>
-    <input type="email" name="correo" />
-    <label> Contraseña </label>
-    <input type="password" name="contrasenia" />
-    <input type="submit" value="Iniciar Sesión" />
-</form>
+<div class="card-login">
+    <form method="POST" action="Login" class="login">
+        <label>Correo</label>
+        <input type="email" name="correo" />
+        <label> Contraseña </label>
+        <input type="password" name="contrasenia" />
+        <input class="btn" type="submit" value="Iniciar Sesión" />
+    </form>
+</div>
 <jsp:include page="/Componentes/Footer.jsp" />

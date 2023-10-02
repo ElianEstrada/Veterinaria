@@ -1,5 +1,5 @@
 <jsp:include page="/Componentes/Header.jsp" />
-<jsp:include page="/Componentes/NavCliente.jsp" />
+<jsp:include page="/Componentes/NavAdmin.jsp" />
 <%@page import="model.Usuario" %>
 <% 
     Usuario usuario = (Usuario) session.getAttribute("usuario");
@@ -24,6 +24,7 @@
 <%
     }
 %>
+
 
 
 <jsp:include page="/Componentes/Footer.jsp" />

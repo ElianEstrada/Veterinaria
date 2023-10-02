@@ -5,4 +5,9 @@
         session.setAttribute("usuario", null);
     }
 %>
+
+<div class="home">
+    <h1> Bienvendios a la Veterinaria</h1>
+</div>
+
 <jsp:include page="./Componentes/Footer.jsp" />

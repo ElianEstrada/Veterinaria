@@ -1,11 +1,12 @@
 <jsp:include page="/Componentes/Header.jsp" />
-<jsp:include page="/Componentes/NavCliente.jsp" />
+<jsp:include page="/Componentes/NavAdmin.jsp" />
 <%@page import="model.Usuario, model.Cita, controlador.ObtenerCita, java.util.ArrayList" %>
 <% 
     Usuario usuario = (Usuario) session.getAttribute("usuario");
     ObtenerCita obtenerCita = new ObtenerCita();
-    ArrayList<Cita> citas = obtenerCita.obtenerCita(usuario.getId());
+    ArrayList<Cita> citas = obtenerCita.obtenerCitasAdmin();
 %>
+
 <h1>Citas Agendadas</h1>
 <div class="cont-tabla">
     <table>
@@ -36,3 +37,4 @@
     </table>
 </div>
 <jsp:include page="/Componentes/Footer.jsp" />
+

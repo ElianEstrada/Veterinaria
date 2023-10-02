@@ -98,7 +98,7 @@ public class CitaBD {
             stm = conexion.createStatement();
             
             String query = MessageFormat.format(
-                    "SELECT * FROM Citas WHERE idCliente = {0}", 
+                    "SELECT * FROM Cita WHERE idCliente = {0}", 
                     idUsuario
             );
             
@@ -106,16 +106,20 @@ public class CitaBD {
             
             result = stm.executeQuery(query);
             
-            if (result.next()) {
+            while (result.next()) {
                 Cita cita = new Cita(
                         result.getString(2), 
                         result.getString(3), 
-                        query, 
-                        query, 
-                        query, 
-                        idUsuario
+                        result.getString(4), 
+                        result.getString(5), 
+                        result.getString(6), 
+                        result.getInt(7)
                 );
-            }
+                cita.setId(result.getInt(1));
+                citas.add(cita);
+            } 
+            
+            System.out.println(citas);
             
             return citas;
             
@@ -124,6 +128,44 @@ public class CitaBD {
         }
         
         return null;
+    }
+    
+    public ArrayList<Cita> obtenerCitasAdmin() {
+        ArrayList<Cita> citas = new ArrayList<Cita>();
+        
+        try {
+            
+            conexion = ConectarBD.abrir();
+            stm = conexion.createStatement();
+            
+            String query = "SELECT * FROM Cita;";
+            
+            System.out.println(query);
+            
+            result = stm.executeQuery(query);
+            
+            while (result.next()) {
+                Cita cita = new Cita(
+                        result.getString(2), 
+                        result.getString(3), 
+                        result.getString(4), 
+                        result.getString(5), 
+                        result.getString(6), 
+                        result.getInt(7)
+                );
+                cita.setId(result.getInt(1));
+                citas.add(cita);
+            } 
+            
+            System.out.println(citas);
+            
+            return citas;
+            
+        } catch (Exception e) {
+            System.out.println("Error al obtener las citas: " + e.getMessage());
+        }
+        
+        return citas;
     }
     
 }
